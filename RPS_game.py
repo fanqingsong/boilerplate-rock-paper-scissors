@@ -1,15 +1,24 @@
 # DO NOT MODIFY THIS FILE
 
 import random
-
+from RPS import create_nn_model
 
 def play(player1, player2, num_games, verbose=False):
+    print(f"now player1 player2 start to gamble, with total times {num_games}")
+
     p1_prev_play = ""
+    p1_opponent_history = []
+    model = create_nn_model()
+    batch_x = []
+    batch_y = []
+
     p2_prev_play = ""
     results = {"p1": 0, "p2": 0, "tie": 0}
 
-    for _ in range(num_games):
-        p1_play = player1(p2_prev_play)
+    for i in range(num_games):
+        # print(f"now gambling {i}th time")
+
+        p1_play = player1(p2_prev_play, p1_opponent_history, model, batch_x, batch_y)
         p2_play = player2(p1_prev_play)
 
         if p1_play == p2_play:
