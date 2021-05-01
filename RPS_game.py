@@ -3,8 +3,10 @@
 import random
 from RPS import create_nn_model
 
-def play(player1, player2, num_games, verbose=False):
-    print(f"now player1 player2 start to gamble, with total times {num_games}")
+
+def play(player1, player2, num_games, verbose=False, review_epochs=10):
+    if verbose:
+        print(f"now player1 player2 start to gamble, with total times {num_games}")
 
     p1_prev_play = ""
     p1_opponent_history = []
@@ -16,9 +18,10 @@ def play(player1, player2, num_games, verbose=False):
     results = {"p1": 0, "p2": 0, "tie": 0}
 
     for i in range(num_games):
-        # print(f"now gambling {i}th time")
+        if verbose:
+            print(f"now gambling {i}th time")
 
-        p1_play = player1(p2_prev_play, p1_opponent_history, model, batch_x, batch_y)
+        p1_play = player1(p2_prev_play, p1_opponent_history, model, batch_x, batch_y, review_epochs)
         p2_play = player2(p1_prev_play)
 
         if p1_play == p2_play:
@@ -36,7 +39,7 @@ def play(player1, player2, num_games, verbose=False):
         if verbose:
             print("Player 1:", p1_play, "| Player 2:", p2_play)
             print(winner)
-            print()
+            print("\r\n")
 
         p1_prev_play = p1_play
         p2_prev_play = p2_play

@@ -7,19 +7,19 @@ print("-------- you vs quincy -------------")
 play(player, quincy, 1000)
 
 print("-------- you vs abbey -------------")
-play(player, abbey, 1000)
+play(player, abbey, 1000, False, 30)
 
 print("-------- you vs kris -------------")
 play(player, kris, 1000)
 
 print("-------- you vs mrugesh -------------")
 play(player, mrugesh, 1000)
-#
+
 # Uncomment line below to play interactively against a bot:
-# play(human, abbey, 20, verbose=True)
+# play(human, abbey, 20, verbose=True, verbose=True)
 #
 # Uncomment line below to play against a bot that plays randomly:
-# play(human, random_player, 1000)
+# play(human, random_player, 1000, verbose=True)
 
 
 
