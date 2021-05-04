@@ -38,3 +38,25 @@ The unit tests for this project are in `test_module.py`. We imported the tests f
 ### Submitting
 
 Copy your project's URL and submit it to freeCodeCamp.
+
+
+### result
+
+```
+
+
+    -------- you vs quincy -------------
+
+    Final results: {'p1': 988, 'p2': 6, 'tie': 6}
+    Player 1 win rate: 99.3963782696177%
+    -------- you vs abbey -------------
+    Final results: {'p1': 431, 'p2': 301, 'tie': 268}
+    Player 1 win rate: 58.879781420765035%
+    -------- you vs kris -------------
+    Final results: {'p1': 768, 'p2': 227, 'tie': 5}
+    Player 1 win rate: 77.1859296482412%
+    -------- you vs mrugesh -------------
+    Final results: {'p1': 828, 'p2': 169, 'tie': 3}
+    Player 1 win rate: 83.04914744232697%
+
+```
